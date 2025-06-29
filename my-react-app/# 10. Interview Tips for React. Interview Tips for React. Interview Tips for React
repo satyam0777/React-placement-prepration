@@ -1,0 +1,26 @@
+# 10. Interview Tips for React
+
+## Concept
+
+- Beyond coding, interviews test your understanding, communication, and problem-solving skills.
+
+## Why it matters in interviews
+
+- Good communication and clear explanations can set you apart, even if you make minor mistakes.
+
+## Example Tips
+
+- **Explain your thought process** as you code.
+- **Write clean, readable code** (use meaningful names, keep components small).
+- **Use hooks and functional components** (modern React standard).
+- **Handle edge cases** (empty lists, loading/error states).
+- **Test your code** (try different inputs, check for bugs).
+- **Ask clarifying questions** if requirements are unclear.
+
+## Practice Question
+
+- Practice explaining how you would build a todo app, step by step, including state management, adding/removing items, and persisting data.
+
+---
+
+**Good luck with your placements! Review these notes, practice coding, and you’ll do great.**

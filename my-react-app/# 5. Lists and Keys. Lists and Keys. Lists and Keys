@@ -1,0 +1,36 @@
+# 5. Lists and Keys
+
+## Concept
+
+- Rendering lists in React is done using `.map()`.
+- Each list item needs a unique `key` prop for efficient updates.
+
+## Why it matters in interviews
+
+- You’ll often need to render dynamic lists (e.g., todos, users).
+- Using keys correctly prevents bugs and improves performance.
+
+## Example
+
+```jsx
+const fruits = ['Apple', 'Banana', 'Cherry'];
+
+function FruitList() {
+  return (
+    <ul>
+      {fruits.map(fruit => (
+        <li key={fruit}>{fruit}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+## Key Points
+
+- Keys should be unique and stable (avoid using array index if possible).
+- Keys help React identify which items changed, added, or removed.
+
+## Practice Question
+
+- Build a component that takes an array of objects (with `id` and `name`) and renders them as a list.

@@ -1,0 +1,35 @@
+# 2. Props and State
+
+## Concept
+
+- **Props**: Data passed from parent to child component. Read-only.
+- **State**: Local data managed by the component. Can change over time.
+
+## Example
+
+```jsx
+import { useState } from 'react';
+
+function Counter({ step }) {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + step)}>Increment</button>
+    </div>
+  );
+}
+
+// Usage
+<Counter step={2} />
+```
+
+## Key Points
+
+- Props are immutable in the child.
+- State is managed using `useState` in functional components.
+- Changing state triggers a re-render.
+
+## Practice Question
+
+- Create a component that accepts a `title` prop and displays it. Add a button to toggle the visibility of the title using state.

@@ -1,0 +1,45 @@
+# 12. Context API
+
+## Concept
+
+- **Context API** provides a way to share values (like theme, user, language) between components without passing props manually at every level.
+- Useful for global data.
+
+## Why it matters in interviews
+
+- You may be asked to implement or explain global state management.
+
+## Example
+
+```jsx
+import { createContext, useContext } from 'react';
+
+// 1. Create context
+const UserContext = createContext();
+
+// 2. Provide context value at a high level
+function App() {
+  const user = { name: "Satyam" };
+  return (
+    <UserContext.Provider value={user}>
+      <Profile />
+    </UserContext.Provider>
+  );
+}
+
+// 3. Consume context in any child
+function Profile() {
+  const user = useContext(UserContext);
+  return <p>Hello, {user.name}!</p>;
+}
+```
+
+## Key Points
+
+- Use `createContext`, `Provider`, and `useContext`.
+- Context is best for truly global data.
+- Avoid overusing context for frequently changing data.
+
+## Practice Question
+
+- Create a theme context and toggle between light and dark mode in your app.

@@ -1,0 +1,56 @@
+# 18. Rolling Up State
+
+## Concept
+
+- **Rolling up state** means moving state higher in the component tree to share it among multiple components (similar to lifting state up, but often at a larger scale).
+
+## Why it matters in interviews
+
+- Shows you can manage shared state in complex UIs.
+
+## Example
+
+```jsx
+import { useState } from 'react';
+
+function App() {
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <div>
+      <List selected={selected} setSelected={setSelected} />
+      <Details selected={selected} />
+    </div>
+  );
+}
+
+function List({ selected, setSelected }) {
+  const items = ["Apple", "Banana", "Cherry"];
+  return (
+    <ul>
+      {items.map(item => (
+        <li
+          key={item}
+          style={{ fontWeight: selected === item ? "bold" : "normal" }}
+          onClick={() => setSelected(item)}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Details({ selected }) {
+  return <div>Selected: {selected || "None"}</div>;
+}
+```
+
+## Key Points
+
+- Roll state up to the lowest common ancestor of all components that need it.
+- Prevents duplication and keeps data in sync.
+
+## Practice Question
+
+- Build a tabbed interface where clicking a tab updates the content below.

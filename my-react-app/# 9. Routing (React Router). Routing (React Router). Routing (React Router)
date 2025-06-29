@@ -1,0 +1,50 @@
+# 9. Routing (React Router)
+
+## Concept
+
+- **Routing** allows navigation between different pages/views in a React app.
+- The most popular library is `react-router-dom`.
+
+## Why it matters in interviews
+
+- Many apps require multiple pages (e.g., Home, About, Profile).
+- You may be asked to implement navigation or explain routing.
+
+## Example
+
+```jsx
+// Install: npm install react-router-dom
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function Home() {
+  return <h2>Home Page</h2>;
+}
+
+function About() {
+  return <h2>About Page</h2>;
+}
+```
+
+## Key Points
+
+- Use `<BrowserRouter>` at the root.
+- Use `<Routes>` and `<Route>` to define paths and components.
+- Use `<Link>` for navigation (not `<a>` tags).
+
+## Practice Question
+
+- Add a new route `/profile` that displays a Profile component.

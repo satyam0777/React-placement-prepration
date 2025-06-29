@@ -1,0 +1,37 @@
+# 11. Prop Drilling
+
+## Concept
+
+- **Prop drilling** is the process of passing data from a parent component down to deeply nested child components via props, even if intermediate components don’t need the data.
+- This can make code harder to maintain as the app grows.
+
+## Why it matters in interviews
+
+- You may be asked how to manage or avoid prop drilling in large applications.
+
+## Example
+
+```jsx
+function Grandparent() {
+  const user = { name: "Satyam" };
+  return <Parent user={user} />;
+}
+
+function Parent({ user }) {
+  // Parent doesn't use 'user', but must pass it down
+  return <Child user={user} />;
+}
+
+function Child({ user }) {
+  return <p>Hello, {user.name}!</p>;
+}
+```
+
+## Key Points
+
+- Prop drilling is not a bug, but can be a code smell in large apps.
+- Solutions include using the Context API or state management libraries.
+
+## Practice Question
+
+- Refactor a component tree to avoid unnecessary prop drilling using Context.

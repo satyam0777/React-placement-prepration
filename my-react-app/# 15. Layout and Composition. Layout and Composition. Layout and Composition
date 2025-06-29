@@ -1,0 +1,37 @@
+# 15. Layout and Composition
+
+## Concept
+
+- **Layout** in React is about arranging components to build complex UIs.
+- **Composition** means building components from other components, often using `props.children`.
+
+## Why it matters in interviews
+
+- Shows your ability to structure reusable and maintainable UIs.
+
+## Example
+
+```jsx
+function Card({ children }) {
+  return (
+    <div style={{ border: "1px solid #ccc", padding: 16, borderRadius: 8 }}>
+      {children}
+    </div>
+  );
+}
+
+// Usage
+<Card>
+  <h2>Title</h2>
+  <p>Description goes here.</p>
+</Card>
+```
+
+## Key Points
+
+- Use composition to avoid duplication.
+- `props.children` lets you pass elements between opening and closing tags.
+
+## Practice Question
+
+- Create a `Layout` component with a header, main, and footer, and use it to wrap a page.

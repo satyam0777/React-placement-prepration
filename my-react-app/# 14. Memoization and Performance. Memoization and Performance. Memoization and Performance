@@ -1,0 +1,39 @@
+# 14. Memoization and Performance
+
+## Concept
+
+- **Memoization** helps optimize performance by preventing unnecessary re-renders.
+- React provides `React.memo`, `useMemo`, and `useCallback`.
+
+## Why it matters in interviews
+
+- You may be asked how to optimize slow components or avoid unnecessary renders.
+
+## Example
+
+```jsx
+import { useMemo } from 'react';
+
+function ExpensiveComponent({ num }) {
+  // Only recalculates when 'num' changes
+  const result = useMemo(() => {
+    let total = 0;
+    for (let i = 0; i < 1e7; i++) {
+      total += num;
+    }
+    return total;
+  }, [num]);
+
+  return <div>Result: {result}</div>;
+}
+```
+
+## Key Points
+
+- `React.memo` for component memoization.
+- `useMemo` for expensive calculations.
+- `useCallback` for memoizing functions.
+
+## Practice Question
+
+- Use `React.memo` to prevent a child component from re-rendering when its props haven’t changed.

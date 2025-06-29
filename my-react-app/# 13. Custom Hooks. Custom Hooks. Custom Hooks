@@ -1,0 +1,45 @@
+# 13. Custom Hooks
+
+## Concept
+
+- **Custom hooks** let you extract and reuse logic across multiple components.
+- They are regular functions that use React hooks.
+
+## Why it matters in interviews
+
+- Shows understanding of code reuse and abstraction in React.
+
+## Example
+
+```jsx
+import { useState } from 'react';
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+  const increment = () => setCount(c => c + 1);
+  const decrement = () => setCount(c => c - 1);
+  return { count, increment, decrement };
+}
+
+// Usage
+function Counter() {
+  const { count, increment, decrement } = useCounter(5);
+  return (
+    <div>
+      <button onClick={decrement}>-</button>
+      <span>{count}</span>
+      <button onClick={increment}>+</button>
+    </div>
+  );
+}
+```
+
+## Key Points
+
+- Custom hooks must start with `use`.
+- They can call other hooks inside.
+- Great for sharing logic (e.g., form handling, fetching data).
+
+## Practice Question
+
+- Write a custom hook for toggling a boolean value.

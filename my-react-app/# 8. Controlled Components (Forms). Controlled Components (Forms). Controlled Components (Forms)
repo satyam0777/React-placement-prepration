@@ -1,0 +1,46 @@
+# 8. Controlled Components (Forms)
+
+## Concept
+
+- **Controlled components** are form elements whose values are controlled by React state.
+- The input’s value is set by state, and changes are handled via event handlers.
+
+## Why it matters in interviews
+
+- Handling forms is a common requirement in real-world apps and interviews.
+
+## Example
+
+```jsx
+import { useState } from 'react';
+
+function NameForm() {
+  const [name, setName] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert(`Submitted name: ${name}`);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+        placeholder="Enter your name"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+## Key Points
+
+- The value of the input is always driven by React state.
+- Use `onChange` to update state as the user types.
+- Prevent default form submission with `e.preventDefault()`.
+
+## Practice Question
+
+- Create a form with two inputs (name and email) and display the values below the form as the user types.

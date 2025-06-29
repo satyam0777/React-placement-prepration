@@ -1,0 +1,40 @@
+# 16. useRef
+
+## Concept
+
+- `useRef` returns a mutable ref object whose `.current` property persists across renders.
+- Commonly used to access DOM elements or persist values without causing re-renders.
+
+## Why it matters in interviews
+
+- Useful for focusing inputs, storing timers, or keeping mutable values.
+
+## Example
+
+```jsx
+import { useRef } from 'react';
+
+function FocusInput() {
+  const inputRef = useRef();
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleClick}>Focus Input</button>
+    </>
+  );
+}
+```
+
+## Key Points
+
+- Changing `.current` does **not** trigger a re-render.
+- Can also be used to store previous values or mutable objects.
+
+## Practice Question
+
+- Use `useRef` to implement a stopwatch that can be started and stopped.

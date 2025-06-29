@@ -1,0 +1,32 @@
+# 6. Event Handling
+
+## Concept
+
+- React uses camelCase for event handlers (e.g., `onClick`).
+- Event handlers are functions that respond to user actions.
+
+## Why it matters in interviews
+
+- Handling events is essential for interactive UIs (buttons, forms, etc.).
+
+## Example
+
+```jsx
+function ClickButton() {
+  function handleClick() {
+    alert('Button clicked!');
+  }
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+
+## Key Points
+
+- You can pass arguments to event handlers using arrow functions:  
+  `<button onClick={() => handleClick(id)} />`
+- React events are synthetic (cross-browser compatible).
+
+## Practice Question
+
+- Create a button that, when clicked, increments a counter and displays the new value.

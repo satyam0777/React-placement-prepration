@@ -1,0 +1,46 @@
+# 7. Lifting State Up
+
+## Concept
+
+- **Lifting state up** means moving shared state to the closest common ancestor of components that need it.
+- This allows multiple components to access and update the same state.
+
+## Why it matters in interviews
+
+- You’ll often need to synchronize data between sibling components (e.g., form inputs, filters).
+
+## Example
+
+```jsx
+import { useState } from 'react';
+
+function Parent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <div>
+      <Input value={value} onChange={setValue} />
+      <Display value={value} />
+    </div>
+  );
+}
+
+function Input({ value, onChange }) {
+  return (
+    <input value={value} onChange={e => onChange(e.target.value)} />
+  );
+}
+
+function Display({ value }) {
+  return <p>Current value: {value}</p>;
+}
+```
+
+## Key Points
+
+- State should be lifted to the nearest common parent when multiple children need to access or modify it.
+- Pass state and setter functions as props.
+
+## Practice Question
+
+- Build two input fields that update and display the same value by lifting state up to their parent.

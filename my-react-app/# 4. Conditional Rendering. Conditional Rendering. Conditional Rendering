@@ -1,0 +1,38 @@
+# 4. Conditional Rendering
+
+## Concept
+
+- Conditional rendering means showing different UI based on certain conditions (like user login status).
+
+## Why it matters in interviews
+
+- You’ll often need to show/hide elements or render different components based on state or props.
+
+## Example
+
+```jsx
+function UserGreeting({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h2>Welcome back!</h2>;
+  }
+  return <h2>Please sign in.</h2>;
+}
+
+// Or using ternary:
+function UserGreeting({ isLoggedIn }) {
+  return (
+    <div>
+      {isLoggedIn ? <h2>Welcome back!</h2> : <h2>Please sign in.</h2>}
+    </div>
+  );
+}
+```
+
+## Key Points
+
+- Use `if`, ternary (`? :`), or logical AND (`&&`) for conditional rendering.
+- Avoid deeply nested conditions for readability.
+
+## Practice Question
+
+- Create a component that displays “Loading…” while data is being fetched, and the data once loaded.

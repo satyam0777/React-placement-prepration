@@ -1,0 +1,44 @@
+# 19. Unoptimal Re-render
+
+## Concept
+
+- **Unoptimal re-render** happens when components re-render more often than necessary, hurting performance.
+- Causes: changing props/state unnecessarily, not memoizing components/functions, or passing new object/array references.
+
+## Why it matters in interviews
+
+- Shows you understand React’s rendering behavior and can optimize apps.
+
+## Example
+
+```jsx
+import { useState, memo } from 'react';
+
+const Child = memo(({ value }) => {
+  console.log("Child rendered");
+  return <div>{value}</div>;
+});
+
+function Parent() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+  return (
+    <>
+      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <Child value={count} />
+    </>
+  );
+}
+```
+
+## Key Points
+
+- Use `React.memo` to prevent unnecessary child renders.
+- Use `useCallback` and `useMemo` to memoize functions and values.
+- Avoid creating new objects/arrays/functions inside render unless needed.
+
+## Practice Question
+
+- Identify and fix unnecessary re-renders in a component tree using memoization.

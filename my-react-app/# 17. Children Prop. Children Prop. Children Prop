@@ -1,0 +1,33 @@
+# 17. Children Prop
+
+## Concept
+
+- The `children` prop lets you pass elements/components between a component’s opening and closing tags.
+- Enables flexible and reusable component layouts.
+
+## Why it matters in interviews
+
+- Shows understanding of React’s composition model.
+
+## Example
+
+```jsx
+function Wrapper({ children }) {
+  return <div className="wrapper">{children}</div>;
+}
+
+// Usage
+<Wrapper>
+  <h1>Hello</h1>
+  <p>This is wrapped content.</p>
+</Wrapper>
+```
+
+## Key Points
+
+- `children` can be any renderable React node (elements, strings, arrays).
+- Useful for modals, cards, layouts, etc.
+
+## Practice Question
+
+- Build a `Modal` component that displays its `children` in a centered box.
