@@ -3,9 +3,22 @@
 
 function Counter() {
   const [count, setCount] = React.useState(0);
+  // why not use normal variable instead of state variable
+  // because normal variable will not trigger a re-render when updated
+  // so we will not see the updated value in the UI
+  // example:
+  // let count = 0; // this is not a state variable, so it will not trigger a re-render when updated    
   // let count1 = 0; // this is not a state variable, so it will not trigger a re-render when updated
   // let message = "hello"; // this is not a state variable, so it will not trigger a re-render when updated
   // let message = "hello" + count; 
+  // if we update count variable, the message variable will not be updated in the UI
+  // count = count + 1; // this will update the count variable, but not trigger a re-render
+  // message = "hello" + count; // this will update the message variable, but not trigger a re-render
+  // so we should use state variable instead of normal variable 
+  // const [count1, setCount1] = React.useState(0);
+
+  // function to increment the count by 1
+
 
   const increment = () => {
     setCount((prevValue) => prevValue + 1);
@@ -15,13 +28,21 @@ function Counter() {
     setCount((prevValue) => prevValue + 1);
     // here prevValue is the value of count , after the last state update
     // so it will always be 1, and the final value of count will be 5 
+    // it change into sync in nature in react 18
+    // so all the state updates will be applied one by one
+    // and the final value of count will be 5
     
     // setCount(count + 1); // This is not the correct way to update state it update the value 1,
     // setCount(count + 1);
     // setCount(count + 1);
     // setCount(count + 1);
     // count1 = count1 + 1;
-
+    //bcoz it is asynch in nature all run together
+    // so the value of count will be same for all the calls
+    // and the final value of count will be 1
+    // this is because React batches state updates for performance reasons
+    // and only applies the last state update in the batch
+    // so if we use count variable to update state, it will always have the same value
     // here count is the value of count before the state update
     // so it will always be 0, and the final value of count will be 0
     // so we should always use the previous value of state when updating state
