@@ -24,10 +24,12 @@ function App() {
       <ul>
         {products.map((product) => {
           return (
-            <li key={product.id}>
-              <strong>{product.name}</strong> - ${product.price} - Category:{" "}
-              {product.category}
-            </li>
+            <ul key={product.id}>
+              <li>
+                <strong>{product.name}</strong> - ${product.price} - Category:{" "}
+                {product.category}
+              </li>
+            </ul>
           );
         })}
       </ul>
@@ -109,7 +111,7 @@ const NullishCoalescing = () => {
   let userInput = null;
   let defaultValue = "Hello, default value!";
 
-  return <p>{userInput ?? defaultValue}</p>;
+  return <p>{userInput ?? defaultValue}</p>;   // if userInput is null or undefined it will return defaultValue
 };
 
 const OptionalChaining = () => {
@@ -121,7 +123,7 @@ const OptionalChaining = () => {
   };
 
   // return user && user.address && <p>{user.address.city}</p>;
-  return <p>{user?.address?.city}</p>;
+  return <p>{user?.address?.city}</p>; // its a easy way to access nested properties safely
 };
 
 const LogicalAnd = () => {
