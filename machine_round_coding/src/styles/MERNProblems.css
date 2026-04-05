@@ -1,0 +1,246 @@
+/* MERN Problems Container */
+.mern-problems-container {
+  padding: 2rem;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.mern-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mern-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.mern-header .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Layout */
+.mern-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.mern-sidebar {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.mern-sidebar h3 {
+  margin-top: 0;
+  color: #1a1a1a;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.75rem;
+}
+
+.mern-problem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mern-problem-item {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.mern-problem-item:hover {
+  border-color: #007bff;
+  background: #f0f7ff;
+}
+
+.mern-problem-item.active {
+  background: #007bff;
+  border-color: #0056b3;
+  color: white;
+}
+
+.mern-problem-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.mern-problem-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mern-difficulty {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.mern-difficulty.easy {
+  background: #d4edda;
+  color: #155724;
+}
+
+.mern-difficulty.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.mern-difficulty.hard {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.mern-problem-item.active .mern-difficulty {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.mern-concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.mern-concept-tag {
+  font-size: 0.7rem;
+  background: #e0e0e0;
+  color: #666;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.mern-problem-item.active .mern-concept-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Main Content */
+.mern-content {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mern-problem-info {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1.5rem;
+}
+
+.mern-problem-info h2 {
+  margin: 0 0 1rem 0;
+  color: #1a1a1a;
+  font-size: 2rem;
+}
+
+.mern-info-tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.mern-difficulty-large {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mern-difficulty-large.easy {
+  background: #d4edda;
+  color: #155724;
+}
+
+.mern-difficulty-large.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.mern-category {
+  padding: 0.5rem 1rem;
+  background: #e7f3ff;
+  color: #004085;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  padding: 0.5rem 0.75rem;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mern-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mern-sidebar {
+    position: static;
+  }
+
+  .mern-header h1 {
+    font-size: 1.5rem;
+  }
+}
